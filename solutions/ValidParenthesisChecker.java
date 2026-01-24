@@ -2,6 +2,8 @@ package solutions;
 
 import java.util.*;
 
+import static solutions.TestHelper.printResult;
+
 /**
  * Valid Parenthesis Checker
  *
@@ -111,12 +113,7 @@ public class ValidParenthesisChecker {
 
     private static void test(String input, boolean expected) {
         boolean actual = checkValidBrackets(input);
-
-        System.out.println("Input    : " + input);
-        System.out.println("Expected : " + expected);
-        System.out.println("Actual   : " + actual);
-        System.out.println("Result   : " + (actual == expected ? "PASS" : "FAIL"));
-        System.out.println("-------------------------");
+        printResult(String.valueOf(input), String.valueOf(actual), String.valueOf(expected));
     }
 
 }
