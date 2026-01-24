@@ -21,11 +21,12 @@ public class BalanceBrackets {
             if (openingBracList.contains(bracket)) {
                 stack.push(bracket);
             } else if (closingBracList.contains(bracket)) {
-                boolean isStackEmpty = stack.isEmpty();
+                if (stack.isEmpty()) return false;
+
                 String popped = stack.pop();
                 String pair = bracketPairs.get(bracket);
 
-                if (isStackEmpty || !Objects.equals(popped, pair)) {
+                if (!Objects.equals(popped, pair)) {
                     return false;
                 }
             }
@@ -40,7 +41,8 @@ public class BalanceBrackets {
             "([])",
             "{[({})]}",
             "({[)}]",
-            "((())"
+            "((())",
+                "(*))"
         );
 
         for (String test : testCases) {
