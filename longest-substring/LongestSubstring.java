@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class Main {
+public class LongestSubstring {
 
     public static String findLongestSubString(String str) {
         String longestSubstring = "";

@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Stack;
 
-public class Main {
+public class BalanceBrackets {
 
     public static boolean isBalanced(String str) {
         List<String> openingBracList = Arrays.asList("{", "[", "(");
