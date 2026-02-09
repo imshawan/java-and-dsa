@@ -86,6 +86,7 @@ public class LongestUniqueSubstring {
         test("pwwkew", "wke");           // Answer in the middle/end mixed
         test("abcdef", "abcdef");        // No repeats at all
         test("abacbabcdef", "abcdef");
+        test("abcabcbabcdefaa", "abcdef");
 
         // --- 2. Edge Cases ---
         test("", "");                    // Empty string

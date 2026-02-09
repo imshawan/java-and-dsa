@@ -28,7 +28,7 @@ public class LongestSubstring {
         return longestSubstring;
     }
     public static void main(String[] args) {
-        List<String> testCases = Arrays.asList("abcabcaaa", "bbbbb", "pwwkew");
+        List<String> testCases = Arrays.asList("abcabcaaa", "bbbbb", "pwwkew", "abcabcbabcdefaa");
         for (String cases: testCases) {
             System.out.println("Longest substring for '" + cases + "' is " + findLongestSubString(cases));
         }
