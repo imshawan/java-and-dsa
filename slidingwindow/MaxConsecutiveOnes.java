@@ -34,17 +34,44 @@ public class MaxConsecutiveOnes {
 
     return maxLength;
   }
+  
+  public static int longestOnes(int[] nums, int k) {
+	int maxLength = 0;
+    int size = nums.length;
+    int left = 0; 
+	int right = 0;
+	int zeros = 0;
+	
+	while (right < size) {
+		if (nums[right] == 0) zeros++;
+		
+		while (zeros > k) {
+			if (nums[left] == 0) {
+				zeros--;
+			}
+			left++;
+		}
+
+		if (right - left + 1 > maxLength) {
+			maxLength = right - left + 1;
+		}
+		
+		right++;
+	}
+
+    return maxLength;
+  }
 
   public static void main(String[] args) {
     test(new int[] {1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 3, "10");
     test(new int[] {0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1}, 3, "9");
-    test(new int[] {0, 0, 0}, 3, "2");
+    test(new int[] {0, 0, 0}, 3, "3");
     test(new int[] {1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 2, "6");
     test(new int[] {0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1}, 3, "10");
   }
 
   private static void test(int[] input, int k, String expected) {
-    String actual = String.valueOf(longestOnesBruteForce(input, k));
+    String actual = String.valueOf(longestOnes(input, k));
     String inputStr = "{nums=" + Arrays.toString(input) + ", k=" + k + "}";
     printResult(inputStr, actual, expected);
   }
